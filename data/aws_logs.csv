@@ -1,0 +1,4 @@
+eventTime,eventSource,eventName,userIdentityType
+2025-12-15T08:00:00Z,ec2.amazonaws.com,StartInstances,IAMUser
+2025-12-15T08:05:00Z,s3.amazonaws.com,DeleteBucket,Root
+2025-12-15T08:10:00Z,iam.amazonaws.com,ConsoleLoginFailed,IAMUser

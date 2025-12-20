@@ -1,0 +1,4 @@
+eventTime,serviceName,methodName,userType
+2025-12-15T08:00:00Z,compute.googleapis.com,instances.start,User
+2025-12-15T08:05:00Z,storage.googleapis.com,buckets.delete,Admin
+2025-12-15T08:10:00Z,iam.googleapis.com,loginFailed,User
