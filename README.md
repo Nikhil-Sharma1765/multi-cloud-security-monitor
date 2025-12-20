@@ -1,5 +1,3 @@
-############## START README.md ##############
-
 # ☁️ Multi-Cloud Security Monitoring Dashboard (AWS + GCP)
 
 An interactive security monitoring dashboard that analyzes **AWS CloudTrail** and **GCP Audit Logs** to detect suspicious activity and visualize cloud events.
@@ -109,10 +107,12 @@ Threat severity scoring
 
 Deployment on cloud hosting (Streamlit Cloud / EC2)
 
+---
+
 👨‍💻 Author
 
 Nikhil Sharma
 Cloud & Security Enthusiast
 Amritsar, India
 
-############## END README.md ##############
+
