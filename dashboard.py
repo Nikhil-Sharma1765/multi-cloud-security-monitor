@@ -34,37 +34,43 @@ threshold = 3  # Minimum number of critical actions per user to trigger alert
 # -----------------------------
 @st.cache_data
 def fetch_aws_logs(bucket_name="nikhil-cloudtrail-logs-eu"):
-    s3 = boto3.client("s3")
-    logs = []
-
+    # First try loading real AWS logs from S3
     try:
+        s3 = boto3.client("s3")
+        logs = []
+
         objects = s3.list_objects_v2(Bucket=bucket_name)
-    except Exception as e:
-        st.warning(f"⚠️ Could not access S3 bucket: {e}")
-        return pd.DataFrame()
+        for obj in objects.get("Contents", []):
+            key = obj["Key"]
+            if not key.endswith(".gz"):
+                continue
 
-    for obj in objects.get("Contents", []):
-        key = obj["Key"]
-        if not key.endswith(".gz"):
-            continue
-        body = s3.get_object(Bucket=bucket_name, Key=key)["Body"].read()
-        with gzip.GzipFile(fileobj=io.BytesIO(body)) as f:
-            data = json.loads(f.read().decode("utf-8"))
+            body = s3.get_object(Bucket=bucket_name, Key=key)["Body"].read()
+            with gzip.GzipFile(fileobj=io.BytesIO(body)) as f:
+                data = json.loads(f.read().decode("utf-8"))
 
-        for record in data.get("Records", []):
-            logs.append({
-                "eventTime": record.get("eventTime"),
-                "eventName": record.get("eventName"),
-                "userName": record.get("userIdentity", {}).get("userName", "Unknown"),
-                "sourceIPAddress": record.get("sourceIPAddress"),
-                "eventSource": record.get("eventSource"),
-                "userAgent": record.get("userAgent")
-            })
+            for record in data.get("Records", []):
+                logs.append({
+                    "eventTime": record.get("eventTime"),
+                    "eventName": record.get("eventName"),
+                    "userName": record.get("userIdentity", {}).get("userName", "Unknown"),
+                    "sourceIPAddress": record.get("sourceIPAddress"),
+                    "eventSource": record.get("eventSource"),
+                    "userAgent": record.get("userAgent")
+                })
 
-    df = pd.DataFrame(logs)
-    if not df.empty:
+        df = pd.DataFrame(logs)
+        if not df.empty:
+            df["eventTime"] = pd.to_datetime(df["eventTime"])
+        return df
+
+    # If AWS fails → fallback to CSV
+    except Exception:
+        st.warning("⚠️ AWS access not available. Loading local AWS demo logs.")
+        df = pd.read_csv("data/aws_logs.csv")
         df["eventTime"] = pd.to_datetime(df["eventTime"])
-    return df
+        df["userName"] = "DemoUser"
+        return df
 
 @st.cache_data
 def fetch_gcp_demo_logs():
