@@ -61,6 +61,7 @@ multi-cloud-monitor/
 📌 Data Sources
 
 AWS:
+⚠️ Note: AWS logs require valid AWS credentials. If unavailable, use demo GCP logs.
 Real CloudTrail logs exported and normalized into CSV format.
 
 GCP:
@@ -75,11 +76,11 @@ This approach ensures consistent detection logic across cloud providers while ke
 source venv/bin/activate
 ```
 
-## 2️⃣ Run the Dashboard
+ 2️⃣ Run the Dashboard
 ```bash 
 streamlit run dashboard.py
 ```
-## 3️⃣ Open in Browser
+ 3️⃣ Open in Browser
 http://localhost:8501
 
 ---
