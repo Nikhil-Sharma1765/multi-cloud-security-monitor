@@ -16,6 +16,12 @@ This project demonstrates how security logs from multiple cloud providers can be
 - Time-based and service-based visualizations
 
 ---
+## 📸 Dashboard Preview
+
+![Dashboard Overview](screenshots/dashboard_overview.png)
+![Filters & Alerts](screenshots/filters_sidebar.
+
+---
 
 ## 🏗️ Architecture Overview
 
