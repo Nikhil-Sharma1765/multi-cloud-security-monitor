@@ -19,7 +19,7 @@ This project demonstrates how security logs from multiple cloud providers can be
 ## 📸 Dashboard Preview
 
 ![Dashboard Overview](screenshots/dashboard_overview.png)
-![Filters & Alerts](screenshots/filters_sidebar.
+![Filters & Alerts](screenshots/filters_sidebar.)
 
 ---
 
