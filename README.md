@@ -26,7 +26,7 @@ This project demonstrates how security logs from multiple cloud providers can be
 ![Filter logs](screenshots/filter_logs.png)
 
 
-![Visualisation](screenshots/visualisation.png)
+![Visualisation](screenshots/visulaisation.png)
 ---
 
 ## 🏗️ Architecture Overview
