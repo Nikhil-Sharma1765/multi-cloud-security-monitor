@@ -17,10 +17,16 @@ This project demonstrates how security logs from multiple cloud providers can be
 
 ---
 ## 📸 Dashboard Preview
-![Filters & Alerts](screenshots/filters_sidebar.png)
-
 ![Dashboard Overview](screenshots/dashboard_overview.png)
 
+
+![Filters & Alerts](screenshots/filters_sidebar.png)
+
+
+![Filter logs](screenshots/filter_logs.png)
+
+
+![Visualisation](screenshots/visualisation.png)
 ---
 
 ## 🏗️ Architecture Overview
