@@ -2,13 +2,16 @@
 
 An interactive security monitoring dashboard that analyzes **AWS CloudTrail** and **GCP Audit Logs** to detect suspicious activity and visualize cloud events.
 
-This project demonstrates how security logs from multiple cloud providers can be normalized and analyzed using a single dashboard, similar to real-world SIEM systems.
+This project demonstrates how security logs from multiple cloud providers can be normalized and analyzed in a single dashboard, similar to real-world **SIEM systems**.
 
 ---
 
 ## 🚀 Features
 
-- Detects suspicious cloud activity (IAM changes, DeleteBucket, failed logins)
+- Detects suspicious cloud activity:
+  - IAM permission changes
+  - `DeleteBucket` operations
+  - Failed authentication attempts
 - Visual alerts for sensitive API actions
 - Interactive Streamlit-based dashboard
 - AWS CloudTrail log analysis (real logs)
@@ -16,32 +19,44 @@ This project demonstrates how security logs from multiple cloud providers can be
 - Time-based and service-based visualizations
 
 ---
+
 ## 📸 Dashboard Preview
+
+### 🔹 Dashboard Overview
+Displays a high-level summary of cloud activity across AWS and GCP, including total events and suspicious actions.
+
 ![Dashboard Overview](screenshots/dashboard_overview.png)
 
+### 🔹 Filters & Alerts
+Allows filtering logs by cloud provider, service, and event type.  
+Highlights sensitive actions such as IAM changes and destructive API calls.
 
-![Filters & Alerts](screenshots/filters_sidebar.png)
+![Filters & Alerts](screenshots/filters.png)
 
+### 🔹 Filtered Logs
+Shows normalized AWS and GCP logs in a structured table for investigation and analysis.
 
-![Filter logs](screenshots/filter_logs.png)
+![Filtered Logs](screenshots/filtered_logs.png)
 
+### 🔹 Visualizations
+Charts showing event frequency over time and service-level activity to identify unusual behavior.
 
-![Visualisation](screenshots/visulaisation.png)
+![Visualizations](screenshots/visualizations.png)
+
 ---
 
 ## 🏗️ Architecture Overview
 
-AWS CloudTrail Logs  
-GCP Audit Logs  
-↓  
-Normalized using Python  
-↓  
-Stored as CSV datasets  
-↓  
-Visualized using Streamlit Dashboard  
+```text
+AWS CloudTrail Logs        GCP Audit Logs
+        ↓                        ↓
+        Normalized using Python
+                    ↓
+            Stored as CSV datasets
+                    ↓
+        Visualized using Streamlit Dashboard
 
-This design mimics real-world SIEM-style log pipelines.
-
+```
 ---
 
 ## 🛠️ Tech Stack
@@ -53,7 +68,6 @@ This design mimics real-world SIEM-style log pipelines.
 - GCP Audit Logs
 
 ---
-
 ## 📂 Project Structure
 
 ```text
@@ -68,7 +82,7 @@ multi-cloud-monitor/
 ├── venv/ 
 ```
 
-📌 Data Sources
+## 📌 Data Sources
 
 AWS:
 ⚠️ Note: AWS logs require valid AWS credentials. If unavailable, use demo GCP logs.
@@ -99,13 +113,13 @@ http://localhost:8501
 
 The dashboard highlights:
 
-Sensitive API actions (DeleteBucket, IAM changes, etc.)
+- Sensitive API actions (DeleteBucket, IAM changes, etc.)
 
-Unusual activity frequency
+- Unusual activity frequency
 
-Potential misconfigurations
+- Potential misconfigurations
 
-Suspicious cloud service usage
+-  Suspicious cloud service usage
 
 ## 🔮 Future Enhancements
 
@@ -126,5 +140,6 @@ Deployment on cloud hosting (Streamlit Cloud / EC2)
 Nikhil Sharma
 Cloud & Security Enthusiast
 Amritsar, India
+
 
 
