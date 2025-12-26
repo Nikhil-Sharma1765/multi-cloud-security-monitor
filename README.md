@@ -41,7 +41,7 @@ Shows normalized AWS and GCP logs in a structured table for investigation and an
 ### 🔹 Visualizations
 Charts showing event frequency over time and service-level activity to identify unusual behavior.
 
-![Visualizations](screenshots/visualization.png)
+![Visualizations](screenshots/visualisation.png)
 
 ---
 
