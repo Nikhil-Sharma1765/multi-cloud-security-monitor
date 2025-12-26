@@ -31,17 +31,17 @@ Displays a high-level summary of cloud activity across AWS and GCP, including to
 Allows filtering logs by cloud provider, service, and event type.  
 Highlights sensitive actions such as IAM changes and destructive API calls.
 
-![Filters & Alerts](screenshots/filters.png)
+![Filters & Alerts](screenshots/filters_sidebar.png)
 
 ### 🔹 Filtered Logs
 Shows normalized AWS and GCP logs in a structured table for investigation and analysis.
 
-![Filtered Logs](screenshots/filtered_logs.png)
+![Filtered Logs](screenshots/filter_logs.png)
 
 ### 🔹 Visualizations
 Charts showing event frequency over time and service-level activity to identify unusual behavior.
 
-![Visualizations](screenshots/visualizations.png)
+![Visualizations](screenshots/visualization.png)
 
 ---
 
