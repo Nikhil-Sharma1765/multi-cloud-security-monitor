@@ -143,3 +143,9 @@ Amritsar, India
 
 
 
+## 🚀 Live Demo
+
+🔗 Streamlit App: https://<your-streamlit-app>.streamlit.app
+
+⚠️ AWS logs load only if credentials are available.
+Demo datasets are included for public access.
